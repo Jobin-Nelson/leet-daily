@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "leet-daily"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Jobin Nelson <jobinnelson369@gmail.com>"]
 readme = "README.md"
@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.11"
 httpx = "^0.25.0"
 selectolax = "^0.3.17"
+requests = "^2.31.0"
 
 [tool.poetry.scripts]
 leet-daily = "leet_daily.main:main"

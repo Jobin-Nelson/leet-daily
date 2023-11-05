@@ -4,7 +4,7 @@ import subprocess
 import textwrap
 from pathlib import Path
 
-import httpx
+import requests
 from selectolax.parser import HTMLParser
 
 from .config import Config
@@ -38,7 +38,7 @@ class Leet:
         self.leet_file.write_text(leet_file_content)
 
     def get_daily_question(self) -> str | None:
-        res = httpx.get(self.daily_qn_link)
+        res = requests.get(self.daily_qn_link)
         html = HTMLParser(res.text)
         content = (html
             .css_first('meta[name="description"]')
@@ -67,9 +67,8 @@ def get_daily_qn_link() -> str:
         'query': 'query questionOfToday {\n\tactiveDailyCodingChallengeQuestion {\n\t\tdate\n\t\tlink\n\t}\n}\n',
         'operationName': 'questionOfToday'
     }
-    res = httpx.post(base_url, json=query)
+    res = requests.post(base_url, json=query)
     relative_url = (res
-        .raise_for_status()
         .json()['data']['activeDailyCodingChallengeQuestion']['link']
     )
     return base_url.rstrip('/graphql/') + relative_url
