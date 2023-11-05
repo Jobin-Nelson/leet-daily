@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "leet"
+version = "0.1.0"
+description = ""
+authors = ["Jobin Nelson <jobinnelson369@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.25.0"
+selectolax = "^0.3.17"
+
+[tool.poetry.scripts]
+leet = "leet.main:main"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
