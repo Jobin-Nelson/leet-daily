@@ -8,6 +8,8 @@ from typing import Any
 
 # config file is expected at ~/.config/leet/config.toml
 
+class ConfigError(ValueError): ...
+
 class Config:
     def __init__(self):
         self.today = datetime.now()

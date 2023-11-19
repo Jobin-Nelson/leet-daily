@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "leet-daily"
-version = "0.1.1"
-description = ""
+version = "0.1.2"
+description = "Leetcode helper for doing daily leetcode questions"
 authors = ["Jobin Nelson <jobinnelson369@gmail.com>"]
 readme = "README.md"
 

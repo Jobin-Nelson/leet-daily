@@ -3,10 +3,15 @@
 from __future__ import annotations
 
 import argparse
+import logging
 from typing import Sequence
 
-from .leet import Leet
+from leet_daily.leet import Leet
 
+logging.basicConfig(
+    format='[%(asctime)s] %(levelname)s [%(name)s Line:%(lineno)d] - %(message)s',
+    level=logging.INFO,
+)
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
