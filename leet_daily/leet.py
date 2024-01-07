@@ -93,4 +93,4 @@ def get_daily_qn_link() -> str:
     }
     res = requests.post(base_url, json=query)
     relative_url = res.json()["data"]["activeDailyCodingChallengeQuestion"]["link"]
-    return base_url.rstrip("/graphql/") + relative_url
+    return base_url.removesuffix("/graphql/") + relative_url
